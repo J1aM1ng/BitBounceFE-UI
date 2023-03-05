@@ -1,0 +1,42 @@
+@import '../../style-var/index';
+
+.#{$cls-prefix}-dialog__mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $bbui-z-index;
+  width: 100%;
+  height: 100vh;
+  background-color: $bbui-dialog-mask;
+
+  &.#{$cls-prefix}-dialog--mask {
+    background-color: rgb(255 255 255 / 0%);
+  }
+}
+
+.#{$cls-prefix}-dialog {
+  position: absolute;
+  right: 0;
+  left: 0;
+  padding: $bbui-dialog-padding;
+  margin: 0 auto;
+  color: black;
+  background-color: $bbui-clean-color;
+  border-radius: $bbui-dialog-border-radius;
+  box-shadow: 0 0 3px 3px rgb(22 21 21 / 15%);
+}
+
+.#{$cls-prefix}-dialog__header {
+  padding: $bbui-dialog-header-padding;
+  font-size: $bbui-font-size-header;
+  font-weight: 700;
+}
+
+.#{$cls-prefix}-dialog__default {
+  min-height: 120px;
+  padding: 30px 0;
+}
+
+.#{$cls-prefix}-dialog__footer {
+  padding-top: 10px;
+}

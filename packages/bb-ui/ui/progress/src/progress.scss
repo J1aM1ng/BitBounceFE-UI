@@ -1,0 +1,19 @@
+// 后边组件主题环节会通过此文件替换下边的变量
+@import '../../style-var/index';
+
+.#{$cls-prefix}-progress {
+  margin-bottom: 2.5%;
+}
+.#{$cls-prefix}-progress--line-shape {
+  width: 50%;
+  height: 10px;
+
+  // color: rgb(231,234,242);
+  // background: rgb(231,234,242);
+  background-color: $bbui-progress-bg;
+  border-radius: 10px;
+}
+
+.#{$cls-prefix}-progress--dashboard-shape {
+  transform: rotate(-216deg);
+}

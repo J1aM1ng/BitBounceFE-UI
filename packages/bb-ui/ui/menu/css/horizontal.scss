@@ -1,0 +1,116 @@
+// 水平的 menu 的样式
+.#{$cls-prefix}-menu__horizontal {
+  box-sizing: border-box;
+  display: flex;
+  padding: 10px 15px 0;
+  line-height: 1.5;
+  border-bottom: 1px solid $bbui-menu-border;
+
+  .#{$cls-prefix}-menu-item {
+    // 为了为 after 伪元素提供定位
+    position: relative;
+    padding: 4px 20px;
+    margin-top: 0;
+    line-height: $bbui-menu-line-height;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      left: 18px;
+      display: block;
+      width: auto;
+      height: 2px;
+      content: '';
+    }
+
+    &:hover {
+      background-color: $bbui-menu-hoverbg;
+    }
+
+    &:hover::after {
+      background-color: $bbui-menu-brand;
+    }
+  }
+
+  .#{$cls-prefix}-submenu {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+
+    &::after {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      left: 18px;
+      display: block;
+      width: auto;
+      height: 2px;
+      content: '';
+    }
+
+    &:hover::after {
+      background-color: $bbui-menu-brand;
+    }
+
+    div.#{$cls-prefix}-submenu--title {
+      padding: 4px 15px;
+      margin: 0;
+      line-height: $bbui-menu-line-height;
+    }
+
+    div.#{$cls-prefix}-submenu--hor-con {
+      position: absolute;
+      z-index: $bbui-z-index;
+      transition: all 0.5s ease-in-out;
+    }
+
+    // div.#{$cls-prefix}-submenu--hor-con-show {
+    //   position: absolute;
+    //   visibility: visible;
+    // }
+
+    // div.#{$cls-prefix}-submenu--hor-con-hidden {
+    //   position: absolute;
+    //   visibility: hidden;
+    // }
+    // 选项容器
+
+    // div {
+    //   span:nth-of-type(2) {
+    //     box-sizing: border-box;
+    //     display: inline-block;
+    //     font-size: 10px;
+    //     width: 14px;
+    //     height: 14px;
+    //     padding-left: 5px;
+    //     transition: all 0.2s ease-in;
+    //   }
+    // }
+  }
+
+  div.#{$cls-prefix}-submenu--hor-con-show {
+    position: absolute;
+    visibility: visible;
+  }
+
+  ul.#{$cls-prefix}-submenu--hor-con-hidden {
+    div.#{$cls-prefix}-submenu--hor-con {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+
+  // 禁用 disabled 的样式
+  .#{$cls-prefix}-menu-item--disabled,
+  .#{$cls-prefix}-submenu--disabled {
+    color: $bbui-disabled;
+    cursor: not-allowed;
+
+    &::after {
+      content: unset;
+    }
+  }
+}

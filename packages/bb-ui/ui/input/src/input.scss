@@ -1,0 +1,35 @@
+@import '../../style-var/index';
+
+input {
+  width: 100%;
+  height: 100%;
+  padding: $bbui-input-padding;
+  color: black;
+  background-color: $bbui-clean-color;
+  border: 1px solid $bbui-input-border-color;
+  border-radius: $bbui-input-border-radius;
+
+  &:focus {
+    border: 1px solid $bbui-input-focus-border-color;
+  }
+
+  &::placeholder {
+    color: #aaa;
+  }
+}
+
+.bbui-input-disabled {
+  cursor: not-allowed;
+}
+
+.bbui-input-md {
+  height: $bbui-input-height-md;
+}
+
+.bbui-input-sm {
+  height: $bbui-input-height-sm;
+}
+
+.bbui-input-lg {
+  height: $bbui-input-height-lg;
+}

@@ -1,0 +1,36 @@
+@use 'sass:math';
+
+@import '../../../../style-var/index';
+
+.#{$cls-prefix}-col {
+  box-sizing: border-box;
+
+  &--is-guttered {
+    display: block;
+  }
+
+  &--span-0,
+  &--is-guttered &--span-0 {
+    display: none;
+  }
+
+  @for $i from 0 through 24 {
+    $percent: (math.div(1, 24) * $i * 100) * 1%;
+
+    &--span-#{$i} {
+      flex: 0 0 $percent;
+      max-width: $percent;
+    }
+    &--offset-#{$i} {
+      margin-left: $percent;
+    }
+    &--push-#{$i} {
+      position: relative;
+      right: $percent;
+    }
+    &--pull-#{$i} {
+      position: relative;
+      left: $percent;
+    }
+  }
+}
